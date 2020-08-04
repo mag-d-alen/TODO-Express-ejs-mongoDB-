@@ -1,0 +1,30 @@
+<%- include("header") -%>
+  <main>
+    <section id="heading">
+      <h1> <%= listTitle %> </h1>
+    </section>
+    <section id="list">
+      <ul>
+        <% newListItems.forEach(item => {%>
+        <form action="/delete" method="post">
+          <li>
+            <span></span>
+            <input type="checkbox" onChange="this.form.submit()" value="<%=item._id %>" name="check">
+            <strong><%=  item.name  %></strong>
+          </li>
+          <input type="hidden" name="hiddenListName" value="<%= listTitle %>"> 
+        </form>
+        <% }) %>
+
+        <form class="item" action="/list" method="post">
+          <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+          <button type="submit" name="list" value="<%= listTitle %>">+</button>
+        </form>
+      </ul>
+    </section>
+    <section id="link">
+      <h2>
+      <a href="http://ancient-fjord-52860.herokuapp.com/about">Read about the project and create your own list</a></h2>
+    </section>
+  </main>
+  <%- include("footer") -%>

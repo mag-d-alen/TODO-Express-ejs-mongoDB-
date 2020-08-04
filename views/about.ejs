@@ -1,0 +1,22 @@
+<%- include("header") -%>
+
+<main>
+  <section id="heading">
+    <h1>My ToDo List</h1>
+  </section>
+
+  <section id="about">
+      <p>This is a Nodejs express app created with ejs engine, supported by mongoDB and hosted at Heroku.<br>
+                It was made in Tel Aviv in July 2020 by Magdalena Ben-Bassat Luszczynska.</p>
+  </section>
+
+  <section id="newList">
+        <h1>Now you can make your own list!</h1>
+         <form class="list" action="/about" method="post"> 
+        <input type="text" name="customName" id="title" class="about" placeholder="Your List's Title" autocomplete="off" >
+        <button type="submit" class="aboutBtn" name= "customName" >GO!</button> 
+      </form>
+  </section>
+ 
+</main>
+<%- include("footer") -%>
