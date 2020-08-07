@@ -63,24 +63,24 @@ app.get("/about", (req, res) => {
 
 
 app.post("/about", (req, res) => {
-  const customName = req.body.customName;
-  res.redirect("/list/" + customName);
+   const customName = req.body.customName;
+   res.redirect("/list/" + customName);
 })
 
-app.get('/list/:customListTitle', (req, res) => {
-  const customName = _.capitalize(req.params.customListTitle);
+app.get('/list/:this', (req, res) => {
+  const customName = _.capitalize(req.params.this);
   List.findOne({ name: customName }, (err, foundList) => {
     if (!err) {
       if (!foundList) {
         const list = new List({
-          name: customName ,
-          items: defaultItems
-        });
-        list.save();
+          items: defaultItems,
+          name: customName
+         });
+               list.save();
         res.redirect("/list/" + customName);
       }
       else {
-        res.render("list", { listTitle: customName, newListItems: foundList.items })
+        res.render("list", { listTitle: customName , newListItems: foundList.items })
       }
     }
     else {
