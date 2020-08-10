@@ -39,6 +39,7 @@ ul{
   
 }
 li, .list{
+  display:flex;
   margin-bottom: 10px;
   border-bottom: 1px solid #F1F1F1;
   padding: 2rem;
@@ -49,7 +50,6 @@ span{
   height: 30px;
 }
 strong{
-  display: inline-block;
   margin-left: max(10%);
 }
 
