@@ -10,7 +10,6 @@
     "lodash": "^4.17.19",
     "mongoose": "^5.9.27",
     "normalize-url": ">=4.5.1"
-    }
   },
   "devDependencies": {},
   "scripts": {
